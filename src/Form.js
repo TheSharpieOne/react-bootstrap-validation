@@ -47,11 +47,11 @@ export default class Form extends InputContainer {
     }
 
     render() {
+        var { children, ...other } = this.props;
         return (
             <form ref="form"
                   onSubmit={this._handleSubmit.bind(this)}
-                  action="#"
-                  className={this.props.className}>
+                  ...other>
                 {this._renderChildren(this.props.children)}
             </form>
         );
